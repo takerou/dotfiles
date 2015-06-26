@@ -1,0 +1,17 @@
+# my tools
+if [[ -e ~/Dev/bin ]]; then
+  export PATH=$HOME/Dev/bin:$PATH
+fi
+
+# nodebrew
+if [[ -f ~/.nodebrew/nodebrew ]]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+  nodebrew use v0.10.25 > /dev/null
+fi
+
+# brew
+export PATH=/usr/local/bin:$PATH
+
+# rbenv
+eval "$(rbenv init -)"
+

@@ -1,0 +1,71 @@
+# Created by newuser for 5.0.5
+export LC_CTYPE="en_US.UTF-8"
+# color
+autoload -Uz colors
+colors
+
+# complition
+autoload -Uz compinit
+compinit
+## ignore small/large
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# alias
+alias -g L='| less'
+alias -g G='| grep'
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+## share history
+setopt share_history
+
+## ignore duplicate history
+setopt hist_ignore_all_dups
+
+## delete old one if already exist
+setopt hist_save_nodups
+
+## delete unnecessary space from history
+setopt hist_reduce_blanks
+
+## show list when multiple histories exist
+setopt auto_menu
+
+## extend wildcard
+setopt extended_glob
+
+# multi byte file name
+setopt print_eight_bit
+
+# '#' 以降をコメントとして扱う
+setopt interactive_comments
+
+# cd
+setopt auto_cd
+
+# keybind
+# ^R enable *
+bindkey '^R' history-incremental-pattern-search-backward
+
+# def utility
+source_if_exists () {
+  if [ -e $1 ]; then
+    #echo "source $1"
+    source $1
+  fi
+}
+
+# looks & prompt
+source_if_exists ~/dotfiles/zsh/looks
+source_if_exists ~/dotfiles/zsh/prompt
+
+# runtime set up
+#source_if_exists ~/dotfiles/zsh/runtime_r_mac
+#source_if_exists ~/dotfiles/zsh/runtime_r_ubuntu
+
+# company related stuff
+source_if_exists ~/.zsh_company_stuff
+

@@ -1,0 +1,43 @@
+
+" -------- NeoBundle -----------
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache'
+source ~/dotfiles/vim/neocomplcache
+NeoBundle 'grep.vim'
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+
+
+" color
+syntax enable
+
+" タブ幅の設定
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" 自動インデント
+:set noautoindent
+
+" netrw
+source ~/dotfiles/vim/netrw
+
+" window split direction
+set splitbelow
+set splitright
+
+" beep off
+set noerrorbells
+set vb t_vb=
+
+" highlight
+set hlsearch
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" tab
+source ~/dotfiles/vim/tab
+

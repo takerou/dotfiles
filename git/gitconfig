@@ -1,0 +1,21 @@
+[alias]
+  co = checkout
+  st = status
+  br = branch
+  tr =  log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+  sum = log --pretty=oneline
+  ov = log --graph --simplify-by-decoration --decorate --pretty=format:'%cd%Cgreen%d %Cblue%h %Creset%s' --date=short
+[core]
+  editor = vim -c \"set fenc=utf-8\"
+[merge]
+  tool = vimdiff
+[http]
+	sslVerify = false
+[https]
+	sslVerify = false
+[push]
+  default = simple
+[color]
+  ui = auto
+[include]
+  path = ~/.git_account
